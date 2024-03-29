@@ -243,6 +243,7 @@ while main_menu != '5':
                             basket_quantity = input("How many would you like to buy")
                             basket_quantity = number_checker(basket_quantity)
                             add_to_basket(dog_food_choice, dog_food, curr_user)
+
                     
                     elif dog_menu == '3':
                         for medical_supplies in dog_medical:
