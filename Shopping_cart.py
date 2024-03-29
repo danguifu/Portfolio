@@ -16,8 +16,6 @@
 #declaring a number checker function for meausuring quantity:
 
 import os
-from datetime import datetime, date
-DATETIME_STRING_FORMAT = "%Y-%m-%d"
 
 
 def number_checker(user_input):
@@ -84,11 +82,6 @@ parrot_medical = {}
 
 my_basket = {}
 
-date_today = date.today()
-formatted_date_today = date_today.strftime("%d-%m-%y")
-current_month = int(formatted_date_today[3:5])
-print(formatted_date_today)
-print(current_month)
 
 print('*' * 100)
 print("\nWelcome to Daniel's pet shop!\n")
@@ -250,29 +243,7 @@ while main_menu != '5':
                             basket_quantity = input("How many would you like to buy")
                             basket_quantity = number_checker(basket_quantity)
                             add_to_basket(dog_food_choice, dog_food, curr_user)
-                            if current_month >=3 <= 7:
-                                print("""Its Spring and that means more fleas in the grass.
-As the grass grows longer, it is easier for fleas to hide 
-and jump onto your dog when it is outside playing. We would recommend 
-buying some flea drops""")
-                                spring_recommendation_choice = input("Would you like us to add flea drops to your basket? Y/N")
-                                if spring_recommendation_choice == 'Y' or 'y':
-                                    spring_chosen_recommendation = "Flea drops"
-                                    print("Added to your basket")
-                                    add_to_basket(spring_chosen_recommendation, dog_medical, curr_user)
-                                else:
-                                    print("No problem. Returning to menu.")
-                            elif current_month > 7 <= 9:
-                                print("""Summer is a great time for your dog to go and get some sunshine.
-The sunshine is great for their physical and mental health. 
-We'd recommend playing some light games of frisbee with your dog.""")   
-                                summer_recommendation_choice = input("Would you like us to add a frisbee to your basket? Y/N")
-                                if summer_recommendation_choice == 'Y' or 'y':
-                                    summer_chosen_recommendation = "Frisbee"
-                                    print("Added to your basket")
-                                    add_to_basket(summer_chosen_recommendation, dog_toys, curr_user)
-                                else:
-                                    print("No problem. Returning to menu.")
+
                     
                     elif dog_menu == '3':
                         for medical_supplies in dog_medical:
